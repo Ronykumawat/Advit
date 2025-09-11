@@ -22,16 +22,19 @@ A cross-platform and automated pipeline for **metagenomic classification and vis
 git clone https://github.com/your-username/Advait.git
 cd Advait
 chmod +x Advait
-
 Method 2: Install requirements
 
 Install conda or mamba
 
 Install aria2 before running:
 pip install aria2
-🚀 Usage
 
+
+🚀 Usage
 Run Advait directly:
+
+bash
+Copy code
 
 ./Advait [options]
 
@@ -44,15 +47,13 @@ Option	Description
 --skip-krona	Skip Krona visualization
 --skip-bracken	Skip Bracken abundance estimation
 -h, --help	Show help message
+
+
 📂 Example Commands
 
-Using an existing database
-
+1. Using an existing database
 ./Advait --threads 8 --have-db yes --db /path/to/db --fastq fastq_files/
-
-
-Downloading the standard (large) database
-
+2. Downloading the standard (large) database
 ./Advait --threads 8 --have-db no --fastq fastq_files/
 
 📊 Outputs
@@ -68,7 +69,6 @@ Stacked bar plots of top 10 species → reports/bracken/species_stacked_bar.png
 📈 Plotting
 
 Advait automatically generates a script for species abundance visualization:
-
 python plot_bracken.py
 
 🔧 Subcommands / Pipeline Steps
@@ -85,8 +85,9 @@ Dr. Jitendra Narayan, Rounak Kumawat. Advait: An automated Kraken2 + Bracken + K
 
 👩‍💻 Contributors
 
-Dr. Jitendra Narayan
 Rounak Kumawat
+
+Dr. Jitendra Narayan
 
 🙏 Acknowledgements
 
@@ -102,9 +103,3 @@ The open-source bioinformatics community
 
 Advait is released under the MIT License.
 
-
----
-
-✅ You can copy-paste this directly into your repository as `README.md`.  
-
-Do you also want me to generate a **pipeline diagram (PNG/SVG)** that you can add under the Features section?
