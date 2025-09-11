@@ -18,12 +18,15 @@ A cross-platform and automated pipeline for **metagenomic classification and vis
 
 📦 Installation
 Method 1: Clone GitHub repository
+
 git clone https://github.com/RonyKumawat/Advait.git
 cd Advait
 chmod +x Advait
-Method 2: Install requirements
 
+
+Method 2: Install requirements
 Install conda or mamba
+
 
 Install aria2 before running:
 pip install aria2
@@ -31,10 +34,7 @@ pip install aria2
 
 🚀 Usage
 Run Advait directly:
-
-bash
 Copy code
-
 ./Advait [options]
 
 Options
