@@ -16,66 +16,76 @@ A cross-platform and automated pipeline for **metagenomic classification and vis
 
 ---
 
-📦 Installation
-Method 1: Clone GitHub repository
+# Advait  
+A cross-platform and automated pipeline for **metagenomic classification and visualization** using **Kraken2, Bracken, and Krona**.  
 
+---
+
+## 📦 Installation  
+
+### Method 1: Clone GitHub repository  
+```bash
 git clone https://github.com/RonyKumawat/Advait.git
 cd Advait
 chmod +x Advait
-
+```
 
 Method 2: Install requirements
-Install conda or mamba
 
-
-Install aria2 before running:
+.Install conda or mamba
+.Install aria2 before running:
+```bash
 pip install aria2
-
-
+```
+---
 🚀 Usage
 Run Advait directly:
-Copy code
+```bash
 ./Advait [options]
+```
+| Option           | Description                                            |                                                |
+| ---------------- | ------------------------------------------------------ | ---------------------------------------------- |
+| `--threads N`    | Number of threads (default: 4)                         |                                                |
+| `--db PATH`      | Path to Kraken2 database (required if `--have-db yes`) |                                                |
+| `--fastq PATH`   | Path to folder containing FASTQ files                  |                                                |
+| \`--have-db yes  | no\`                                                   | Specify if you already have a Kraken2 database |
+| `--skip-krona`   | Skip Krona visualization                               |                                                |
+| `--skip-bracken` | Skip Bracken abundance estimation                      |                                                |
+| `-h, --help`     | Show help message                                      |                                                |
 
-Options
-Option	Description
---threads N	Number of threads (default: 4)
---db PATH	Path to Kraken2 database (required if --have-db yes)
---fastq PATH	Path to folder containing FASTQ files
-`--have-db yes	no`
---skip-krona	Skip Krona visualization
---skip-bracken	Skip Bracken abundance estimation
--h, --help	Show help message
-
+---
 
 📂 Example Commands
 
 1. Using an existing database
+```bash
 ./Advait --threads 8 --have-db yes --db /path/to/db --fastq fastq_files/
+```
 2. Downloading the standard (large) database
+```bash
 ./Advait --threads 8 --have-db no --fastq fastq_files/
-
+```
 📊 Outputs
 
-Kraken2 reports → results/kraken2/
-
-Bracken tables → reports/bracken/
-
-Krona interactive HTML plots → reports/krona/
-
-Stacked bar plots of top 10 species → reports/bracken/species_stacked_bar.png
+.Kraken2 reports → results/kraken2/
+.Bracken tables → reports/bracken/
+.Krona interactive HTML plots → reports/krona/
+.Stacked bar plots of top 10 species → reports/bracken/species_stacked_bar.png
 
 📈 Plotting
 
 Advait automatically generates a script for species abundance visualization:
+```bash
 python plot_bracken.py
+```
 
 🔧 Subcommands / Pipeline Steps
-Step	Tool	Function
-Classification	Kraken2	Taxonomic classification of reads
-Abundance estimation	Bracken	Species-level read reassignment
-Visualization	Krona	Interactive taxonomic visualization
-Plotting	Matplotlib + Pandas	Stacked bar plots across samples
+| Step                 | Tool                | Function                            |
+| -------------------- | ------------------- | ----------------------------------- |
+| Classification       | Kraken2             | Taxonomic classification of reads   |
+| Abundance estimation | Bracken             | Species-level read reassignment     |
+| Visualization        | Krona               | Interactive taxonomic visualization |
+| Plotting             | Matplotlib + Pandas | Stacked bar plots across samples    |
 
 📖 Citation
 
@@ -85,19 +95,15 @@ Dr. Jitendra Narayan, Rounak Kumawat. Advait: An automated Kraken2 + Bracken + K
 
 👩‍💻 Contributors
 
-Rounak Kumawat
-
-Dr. Jitendra Narayan
+.Dr. Jitendra Narayan
+.Rounak Kumawat
 
 🙏 Acknowledgements
 
-Kraken2 team for their ultrafast classification tool
-
-Bracken developers for accurate species abundance estimation
-
-Krona developers for interactive hierarchical visualization
-
-The open-source bioinformatics community
+.Kraken2 team for their ultrafast classification tool
+.Bracken developers for accurate species abundance estimation
+.Krona developers for interactive hierarchical visualization
+.The open-source bioinformatics community
 
 📜 License
 
