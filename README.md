@@ -1,44 +1,37 @@
-Advait
+# Advait  
+A cross-platform and automated pipeline for **metagenomic classification and visualization** using **Kraken2, Bracken, and Krona**.  
 
-A streamlined pipeline for Kraken2 + Bracken + Krona analysis of metagenomic data.
+---
 
-Advait automates the installation of dependencies, database setup, taxonomic classification, abundance estimation, and interactive visualization. It also generates summary plots for species-level abundance across samples.
+## ✨ Features
+- **Easy to install**: statically managed via conda/mamba, no compilation required  
+- **Automated pipeline**: runs **Kraken2 + Bracken + Krona** end-to-end  
+- **Database management**:  
+  - Option to use an existing Kraken2 database  
+  - Automated download of Kraken2 standard databases (⚠️ always prefer the **large/standard database**)  
+- **FASTQ input support**: handles paired-end FASTQ files  
+- **Species-level abundance**: integrates Bracken for accurate read assignment  
+- **Interactive visualization**: generates Krona plots (HTML)  
+- **Custom plotting**: auto-creates Python script for stacked bar plots  
 
-✨ Features
+---
 
-Automated installation of Kraken2, Bracken, and Krona
-
-Database management (download or use existing)
-
-Supports paired-end FASTQ files
-
-Species abundance estimation with Bracken
-
-Interactive taxonomic visualization with Krona
-
-Auto-generates stacked bar plots for top 10 species
-
-⚠️ Important Notes
-
-Always prefer downloading the Kraken2 large (standard) database for best results.
-
-Before running Advait, install aria2:
-
-pip install aria2
-
-🔧 Installation
-
-Clone this repository and make the script executable:
-
-git clone https://github.com/Ronykumawat/Advit.git
-
+## 📦 Installation
+### Method 1: Clone GitHub repository
+```bash
+git clone https://github.com/your-username/Advait.git
 cd Advait
-
 chmod +x Advait
 
+Method 2: Install requirements
+
+Install conda or mamba
+
+Install aria2 before running:
+pip install aria2
 🚀 Usage
 
-Run the pipeline using:
+Run Advait directly:
 
 ./Advait [options]
 
@@ -51,14 +44,14 @@ Option	Description
 --skip-krona	Skip Krona visualization
 --skip-bracken	Skip Bracken abundance estimation
 -h, --help	Show help message
-Example Commands
+📂 Example Commands
 
-Using an existing database:
+Using an existing database
 
 ./Advait --threads 8 --have-db yes --db /path/to/db --fastq fastq_files/
 
 
-Downloading and using the database:
+Downloading the standard (large) database
 
 ./Advait --threads 8 --have-db no --fastq fastq_files/
 
@@ -66,31 +59,52 @@ Downloading and using the database:
 
 Kraken2 reports → results/kraken2/
 
-Bracken abundance tables → reports/bracken/
+Bracken tables → reports/bracken/
 
-Krona interactive plots (HTML) → reports/krona/
+Krona interactive HTML plots → reports/krona/
 
-Stacked bar plots of top species → reports/bracken/species_stacked_bar.png
+Stacked bar plots of top 10 species → reports/bracken/species_stacked_bar.png
 
-📈 Extra Plotting
+📈 Plotting
 
-A script plot_bracken.py is automatically generated for visualization:
+Advait automatically generates a script for species abundance visualization:
 
 python plot_bracken.py
 
+🔧 Subcommands / Pipeline Steps
+Step	Tool	Function
+Classification	Kraken2	Taxonomic classification of reads
+Abundance estimation	Bracken	Species-level read reassignment
+Visualization	Krona	Interactive taxonomic visualization
+Plotting	Matplotlib + Pandas	Stacked bar plots across samples
+📖 Citation
 
-This creates a stacked bar plot of top 10 species per sample.
+If you use Advait in your work, please cite:
 
-🛠 Requirements
+Dr. Jitendra Narayan, Rounak Kumawat. Advait: An automated Kraken2 + Bracken + Krona pipeline for metagenomic classification and visualization. 2025.
 
-Linux / macOS
+👩‍💻 Contributors
 
-Conda or Mamba
+Dr. Jitendra Narayan
+Rounak Kumawat
 
-Tools: kraken2, bracken, krona (installed automatically)
+🙏 Acknowledgements
 
-Python 3 with pandas and matplotlib
+Kraken2 team for their ultrafast classification tool
+
+Bracken developers for accurate species abundance estimation
+
+Krona developers for interactive hierarchical visualization
+
+The open-source bioinformatics community
 
 📜 License
 
-MIT License – feel free to use and modify.
+Advait is released under the MIT License.
+
+
+---
+
+✅ You can copy-paste this directly into your repository as `README.md`.  
+
+Do you also want me to generate a **pipeline diagram (PNG/SVG)** that you can add under the Features section?
