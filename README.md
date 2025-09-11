@@ -16,10 +16,9 @@ A cross-platform and automated pipeline for **metagenomic classification and vis
 
 ---
 
-## 📦 Installation
-### Method 1: Clone GitHub repository
-```bash
-git clone https://github.com/your-username/Advait.git
+📦 Installation
+Method 1: Clone GitHub repository
+git clone https://github.com/RonyKumawat/Advait.git
 cd Advait
 chmod +x Advait
 Method 2: Install requirements
@@ -77,6 +76,7 @@ Classification	Kraken2	Taxonomic classification of reads
 Abundance estimation	Bracken	Species-level read reassignment
 Visualization	Krona	Interactive taxonomic visualization
 Plotting	Matplotlib + Pandas	Stacked bar plots across samples
+
 📖 Citation
 
 If you use Advait in your work, please cite:
