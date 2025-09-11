@@ -30,7 +30,7 @@ pip install aria2
 
 Clone this repository and make the script executable:
 
-git clone https://github.com/Ronykumawat/Advait.git
+git clone https://github.com/Ronykumawat/Advit.git
 cd Advait
 chmod +x Advait
 
