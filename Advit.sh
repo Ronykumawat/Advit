@@ -122,7 +122,7 @@ setup_database() {
 
         echo "Downloading database with $THREADS threads..."
         mkdir -p Database_kraken
-        aria2c --check-certificate=false -x "$THREADS" -s "$THREADS" -d Database_kraken -o db.tar.gz "$DB_URL"
+        aria2c --check-certificate=false -x 10 -s "$THREADS" -d Database_kraken -o db.tar.gz "$DB_URL"
 
         echo "Extracting database..."
         tar -xvzf Database_kraken/db.tar.gz -C Database_kraken
