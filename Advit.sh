@@ -51,6 +51,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         --fastq)
             FASTQ_DIR="$2"
+            INPUT_TYPE="fastq"
             shift 2
             ;;
             --fasta)
