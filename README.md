@@ -25,7 +25,7 @@ A cross-platform and automated pipeline for **metagenomic classification and vis
 
 ### Method 1: Clone GitHub repository  
 ```bash
-git clone https://github.com/RonyKumawat/Advait.git
+git clone https://github.com/Ronykumawat/Advit.git
 cd Advait
 chmod +x Advait
 ```
