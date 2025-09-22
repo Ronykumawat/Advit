@@ -1,4 +1,4 @@
-# Advait  
+# Advit  
 A cross-platform and automated pipeline for **metagenomic classification and visualization** using **Kraken2, Bracken, and Krona**.  
 
 ---
@@ -9,7 +9,7 @@ A cross-platform and automated pipeline for **metagenomic classification and vis
 - **Database management**:  
   - Option to use an existing Kraken2 database  
   - Automated download of Kraken2 standard databases (⚠️ always prefer the **large/standard database**)  
-- **FASTQ input support**: handles paired-end FASTQ files  
+- **FASTQ and FASTA input support**: handles paired-end FASTQ files  
 - **Species-level abundance**: integrates Bracken for accurate read assignment  
 - **Interactive visualization**: generates Krona plots (HTML)  
 - **Custom plotting**: auto-creates Python script for stacked bar plots  
@@ -26,8 +26,8 @@ A cross-platform and automated pipeline for **metagenomic classification and vis
 ### Method 1: Clone GitHub repository  
 ```bash
 git clone https://github.com/Ronykumawat/Advit.git
-cd Advait
-chmod +x Advait
+cd Advit
+chmod +x Advit
 ```
 
 Method 2: Install requirements
@@ -39,16 +39,17 @@ pip install aria2
 ```
 ---
 🚀 Usage
-Run Advait directly:
+Run Advit directly:
 ```bash
-./Advait [options]
+./Advit [options]
 ```
 | Option           | Description                                            |                                                |
 | ---------------- | ------------------------------------------------------ | ---------------------------------------------- |
 | `--threads N`    | Number of threads (default: 4)                         |                                                |
 | `--db PATH`      | Path to Kraken2 database (required if `--have-db yes`) |                                                |
 | `--fastq PATH`   | Path to folder containing FASTQ files                  |                                                |
-| \`--have-db yes  | no\`                                                   | Specify if you already have a Kraken2 database |
+| `--fasta PATH`   | Path to folder containing FASTA files                  |                                                |
+| `--have-db yes no\`| Specify if you already have a Kraken2 database       |                                                |
 | `--skip-krona`   | Skip Krona visualization                               |                                                |
 | `--skip-bracken` | Skip Bracken abundance estimation                      |                                                |
 | `-h, --help`     | Show help message                                      |                                                |
@@ -59,11 +60,11 @@ Run Advait directly:
 
 1. Using an existing database
 ```bash
-./Advait --threads 8 --have-db yes --db /path/to/db --fastq fastq_files/
+./Advit --threads 8 --have-db yes --db /path/to/db --fastq fastq_files/
 ```
 2. Downloading the standard (large) database
 ```bash
-./Advait --threads 8 --have-db no --fastq fastq_files/
+./Advit --threads 8 --have-db no --fastq fastq_files/
 ```
 📊 Outputs
 
@@ -89,9 +90,9 @@ python plot_bracken.py
 
 📖 Citation
 
-If you use Advait in your work, please cite:
+If you use Advit in your work, please cite:
 
-Dr. Jitendra Narayan, Rounak Kumawat. Advait: An automated Kraken2 + Bracken + Krona pipeline for metagenomic classification and visualization. 2025.
+Dr. Jitendra Narayan, Rounak Kumawat. Advit: An automated Kraken2 + Bracken + Krona pipeline for metagenomic classification and visualization. 2025.
 
 👩‍💻 Contributors
 
