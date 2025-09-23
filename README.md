@@ -17,7 +17,7 @@ A cross-platform and automated pipeline for **metagenomic classification and vis
 
 ---
 
-# Advait  
+# Advit  
 A cross-platform and automated pipeline for **metagenomic classification and visualization** using **Kraken2, Bracken, and Krona**.  
 
 ---
