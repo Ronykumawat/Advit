@@ -52,6 +52,7 @@ Run Advit directly:
 | `--fasta PATH`   | Path to folder containing FASTA files                  |                                                |
 | `--have-db yes no\`| Specify if you already have a Kraken2 database       |                                                |
 | `--skip-krona`   | Skip Krona visualization                               |                                                |
+| `--bracken-level L`   | Taxonomic level for Bracken -l (e.g. S, G, P, etc.)|                                               |
 | `--skip-bracken` | Skip Bracken abundance estimation                      |                                                |
 | `-h, --help`     | Show help message                                      |                                                |
 
@@ -61,7 +62,7 @@ Run Advit directly:
 
 1. Using an existing database
 ```bash
-./Advit --threads 8 --have-db yes --db /path/to/db --fastq fastq_files/
+  ./Advit.sh --threads 8 --have-db yes --db /path/to/db --fastq fastq_files/ --bracken-level G
 ```
 2. Downloading the standard (large) database
 ```bash
