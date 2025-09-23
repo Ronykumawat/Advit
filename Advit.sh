@@ -16,6 +16,7 @@ RUN_BRACKEN=true
 HAVE_DB=""   # yes or no
 FASTA_DIR=""
 INPUT_TYPE=""
+BRACKEN_LEVEL="S"    # default: Species level
 
 usage() {
     echo "Usage: $0 [options]"
@@ -26,15 +27,17 @@ usage() {
     echo "  --fastq PATH         Path to folder containing FASTQ files"
     echo "  --fasta PATH         Path to folder containing FASTA files (alternative to --fastq)"
     echo "  --have-db yes|no     Specify if you already have a Kraken2 database"
+    echo "  --bracken-level L    Taxonomic level for Bracken (-l) (default: S)"
     echo "  --skip-krona         Skip Krona visualization"
     echo "  --skip-bracken       Skip Bracken abundance estimation"
     echo "  -h, --help           Show this help message"
     echo ""
     echo "Examples:"
-    echo "  $0 --threads 8 --have-db yes --db /path/to/db --fastq fastq_files/"
+    echo "  $0 --threads 8 --have-db yes --db /path/to/db --fastq fastq_files/ --bracken-level G"
     echo "  $0 --threads 8 --have-db no --fastq fastq_files/"
     exit 0
 }
+
 
 # ===============================
 # Parse Arguments
@@ -54,9 +57,13 @@ while [[ $# -gt 0 ]]; do
             INPUT_TYPE="fastq"
             shift 2
             ;;
-            --fasta)
+        --fasta)
             FASTA_DIR="$2"
             INPUT_TYPE="fasta"
+            shift 2
+            ;;
+        --bracken-level)
+            BRACKEN_LEVEL="$2"
             shift 2
             ;;
         --have-db)
@@ -182,7 +189,7 @@ run_pipeline() {
                 bracken -d "$DB_PATH" \
                     -i results/kraken2/${SAMPLE}.kreport \
                     -o reports/bracken/${SAMPLE}.bracken \
-                    -r 150 -l S
+                     -r 150 -l "$BRACKEN_LEVEL"
             fi
 
             if $RUN_KRONA; then
@@ -221,7 +228,7 @@ run_pipeline() {
                 bracken -d "$DB_PATH" \
                     -i results/kraken2/${SAMPLE}.kreport \
                     -o reports/bracken/${SAMPLE}.bracken \
-                    -r 150 -l S
+                     -r 150 -l "$BRACKEN_LEVEL"
             fi
 
             if $RUN_KRONA; then
