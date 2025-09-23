@@ -10,7 +10,6 @@ A cross-platform and automated pipeline for **metagenomic classification and vis
   - Option to use an existing Kraken2 database  
   - Automated download of Kraken2 standard databases (⚠️ always prefer the **large/standard database**)  
 - **FASTQ and FASTA input support**: handles paired-end FASTQ files
-  - Note: FASTQ files should be the trimmed reads, typically _R1_val_1.fq and _R2_val_2.fq, generated after trimming with tools like Fastp or trim-galore.
 - **Species-level abundance**: integrates Bracken for accurate read assignment  
 - **Interactive visualization**: generates Krona plots (HTML)  
 - **Custom plotting**: auto-creates Python script for stacked bar plots  
@@ -77,7 +76,7 @@ Run Advit directly:
 
 📈 Plotting
 
-Advait automatically generates a script for species abundance visualization:
+Advit automatically generates a script for species abundance visualization:
 ```bash
 python plot_bracken.py
 ```
@@ -99,6 +98,7 @@ Dr. Jitendra Narayan, Rounak Kumawat. Advit: An automated Kraken2 + Bracken + Kr
 👩‍💻 Contributors
 
 .Dr. Jitendra Narayan
+
 .Rounak Kumawat
 
 🙏 Acknowledgements
@@ -110,5 +110,5 @@ Dr. Jitendra Narayan, Rounak Kumawat. Advit: An automated Kraken2 + Bracken + Kr
 
 📜 License
 
-Advait is released under the MIT License.
+Advit is released under the MIT License.
 
