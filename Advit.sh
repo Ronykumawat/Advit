@@ -203,7 +203,7 @@ run_pipeline() {
 
             if $RUN_KRONA; then
                 echo "Generating Krona plot for $SAMPLE..."
-                ktImportTaxonomy results/kraken2/${SAMPLE}.kraken \
+                ktImportTaxonomy -q 2 -t 3 results/kraken2/${SAMPLE}.kraken \
                     -o reports/krona/${SAMPLE}.html
             fi
         done
@@ -242,7 +242,7 @@ run_pipeline() {
 
             if $RUN_KRONA; then
                 echo "Generating Krona plot for $SAMPLE..."
-                ktImportTaxonomy results/kraken2/${SAMPLE}.kraken \
+                ktImportTaxonomy -q 2 -t 3 results/kraken2/${SAMPLE}.kraken \
                     -o reports/krona/${SAMPLE}.html
             fi
         done
