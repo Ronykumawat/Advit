@@ -106,7 +106,15 @@ check_tools() {
             break
         fi
     done
-}
+# ✅ Force Krona taxonomy update
+    KRONA_PATH=$(dirname $(which ktImportTaxonomy))/../opt/krona
+    if [ -d "$KRONA_PATH" ]; then
+        echo "Updating Krona taxonomy (this may take a few minutes)..."
+        (cd "$KRONA_PATH" && ./updateTaxonomy.sh)
+    else
+        echo "Warning: Krona installation directory not found, taxonomy update skipped."
+    fi
+    }
 
 # ===============================
 # Setup Database
