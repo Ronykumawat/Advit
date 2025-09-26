@@ -27,7 +27,7 @@ A cross-platform and automated pipeline for **metagenomic classification and vis
 ```bash
 git clone https://github.com/Ronykumawat/Advit.git
 cd Advit
-chmod +x Advit
+chmod +x Advit.sh
 ```
 
 Method 2: Install requirements
