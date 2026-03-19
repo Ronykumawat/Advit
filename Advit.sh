@@ -176,7 +176,7 @@ run_pipeline() {
 
         mkdir -p results/kraken2 reports/bracken reports/krona
 
-        for R1 in "$FASTQ_DIR"/*_R1_*.fq; do
+        for R1 in "$FASTQ_DIR"/*_R1*.fq; do
             SAMPLE=$(basename "$R1" | sed -E 's/_R1.*\.f(ast)?q(\.gz)?//')
             EXT=$(echo "$R1" | sed -E 's/.*(\.f(ast)?q(\.gz)?)$/\1/')
             R2="${FASTQ_DIR}/${SAMPLE}_R2${EXT}"
